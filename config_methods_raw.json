@@ -1,0 +1,2412 @@
+{
+  "metadata": {
+    "total_methods": 131,
+    "read_methods": 100,
+    "write_methods": 31,
+    "migrated": 22,
+    "needs_migration": 19
+  },
+  "methods": [
+    {
+      "name": "load_config",
+      "file": "config_manager.py",
+      "line": 93,
+      "type": "read",
+      "system": "direct_json",
+      "signature": "def load_config(path: str | Path = \"config.json\", use_env_placeholders: bool = True) -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [
+        "config_manager"
+      ],
+      "used_by": [
+        "scripts\\train_multihorizon_model.py",
+        "scripts\\rl\\rl_training_pipeline.py",
+        "scripts\\rl\\rl_training_pipeline_multi_strategy.py",
+        "scripts\\rl\\rl_training_pipeline_unified.py",
+        "ui\\ui_main_window.py",
+        "ui\\utils\\config_manager.py"
+      ],
+      "migration_status": "needs_migration"
+    },
+    {
+      "name": "load_training_config",
+      "file": "config_manager.py",
+      "line": 258,
+      "type": "read",
+      "system": "direct_json",
+      "signature": "def load_training_config(path: Optional[str | Path] = None) -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [
+        "config_manager"
+      ],
+      "used_by": [
+        "tradeapp_legacy.py",
+        "training_options_panel.py",
+        "training_utils.py",
+        "walk_forward_validation.py",
+        "archive\\TradeApp_legacy.py",
+        "tests\\unit\\test_training_config.py"
+      ],
+      "migration_status": "needs_migration"
+    },
+    {
+      "name": "load_gui_config",
+      "file": "config_manager.py",
+      "line": 308,
+      "type": "read",
+      "system": "direct_json",
+      "signature": "def load_gui_config(path: Optional[str | Path] = None) -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [
+        "config_manager"
+      ],
+      "used_by": [],
+      "migration_status": "needs_migration"
+    },
+    {
+      "name": "load_rl_config",
+      "file": "config_manager.py",
+      "line": 341,
+      "type": "read",
+      "system": "direct_json",
+      "signature": "def load_rl_config(path: Optional[str | Path] = None) -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [
+        "config_manager"
+      ],
+      "used_by": [
+        "scripts\\rl\\rl_training_pipeline.py"
+      ],
+      "migration_status": "needs_migration"
+    },
+    {
+      "name": "load_dashboard_config",
+      "file": "config_manager.py",
+      "line": 377,
+      "type": "read",
+      "system": "direct_json",
+      "signature": "def load_dashboard_config(path: Optional[str | Path] = None) -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [
+        "config_manager"
+      ],
+      "used_by": [
+        "prediction_dashboard_tab.py"
+      ],
+      "migration_status": "needs_migration"
+    },
+    {
+      "name": "load_influx_config",
+      "file": "config_manager.py",
+      "line": 414,
+      "type": "read",
+      "system": "direct_json",
+      "signature": "def load_influx_config(path: Optional[str | Path] = None) -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [
+        "config_manager"
+      ],
+      "used_by": [
+        "data_manager\\data_sources\\influx_to_sql.py",
+        "data_source\\data_pipeline\\data_sources\\influx_to_sql.py"
+      ],
+      "migration_status": "needs_migration"
+    },
+    {
+      "name": "load_run_config",
+      "file": "model_manager.py",
+      "line": 203,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def load_run_config(self, run_id: int) -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [],
+      "used_by": [
+        "scripts\\create_run_config.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "load_config_from_json",
+      "file": "tradeapp_legacy.py",
+      "line": 619,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def load_config_from_json(config_path: str, logger=None) -> Optional[Dict]:",
+      "return_type": "Optional[Dict]",
+      "dependencies": [
+        "training_utils"
+      ],
+      "used_by": [
+        "archive\\TradeApp_legacy.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "load_training_config",
+      "file": "training_options_panel.py",
+      "line": 42,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def load_training_config(path=None):",
+      "return_type": null,
+      "dependencies": [
+        "training_utils"
+      ],
+      "used_by": [
+        "config_manager.py",
+        "tradeapp_legacy.py",
+        "training_utils.py",
+        "walk_forward_validation.py",
+        "archive\\TradeApp_legacy.py",
+        "tests\\unit\\test_training_config.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "load_training_config",
+      "file": "training_utils.py",
+      "line": 63,
+      "type": "read",
+      "system": "MasterConfigManager",
+      "signature": "def load_training_config(config_path: Optional[Union[str, Path]] = None) -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [
+        "config_manager",
+        "MasterConfigManager",
+        "ConfigManager",
+        "core.config_manager"
+      ],
+      "used_by": [
+        "config_manager.py",
+        "tradeapp_legacy.py",
+        "training_options_panel.py",
+        "walk_forward_validation.py",
+        "archive\\TradeApp_legacy.py",
+        "tests\\unit\\test_training_config.py"
+      ],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "load_config_from_json",
+      "file": "archive\\TradeApp_legacy.py",
+      "line": 626,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def load_config_from_json(config_path: str, logger=None) -> Optional[Dict]:",
+      "return_type": "Optional[Dict]",
+      "dependencies": [
+        "training_utils"
+      ],
+      "used_by": [
+        "tradeapp_legacy.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "load_influx_config",
+      "file": "data_manager\\data_sources\\influx_to_sql.py",
+      "line": 305,
+      "type": "read",
+      "system": "MasterConfigManager",
+      "signature": "def load_influx_config(path: str = \"config/influx.json\") -> dict:",
+      "return_type": "dict",
+      "dependencies": [
+        "config_manager",
+        "MasterConfigManager",
+        "ConfigManager",
+        "core.config_manager"
+      ],
+      "used_by": [
+        "config_manager.py",
+        "data_source\\data_pipeline\\data_sources\\influx_to_sql.py"
+      ],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "load_influx_config",
+      "file": "data_source\\data_pipeline\\data_sources\\influx_to_sql.py",
+      "line": 294,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def load_influx_config(path: str = \"config/influx.json\") -> dict:",
+      "return_type": "dict",
+      "dependencies": [],
+      "used_by": [
+        "config_manager.py",
+        "data_manager\\data_sources\\influx_to_sql.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "load_run_config",
+      "file": "scripts\\create_run_config.py",
+      "line": 97,
+      "type": "read",
+      "system": "MasterConfigManager",
+      "signature": "def load_run_config(run_name: str, run_dir: Optional[Path] = None) -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [
+        "config_manager",
+        "core.config_manager"
+      ],
+      "used_by": [
+        "model_manager.py"
+      ],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "load_legacy_config",
+      "file": "scripts\\migrate_configs.py",
+      "line": 36,
+      "type": "read",
+      "system": "MasterConfigManager",
+      "signature": "def load_legacy_config(path: Path) -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [
+        "config_manager",
+        "MasterConfigManager",
+        "ConfigManager",
+        "core.config_manager"
+      ],
+      "used_by": [],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "load_best_model_config",
+      "file": "scripts\\run_walk_forward_validation.py",
+      "line": 25,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def load_best_model_config() -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [],
+      "used_by": [],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "load_base_config",
+      "file": "scripts\\training_config.py",
+      "line": 69,
+      "type": "read",
+      "system": "direct_json",
+      "signature": "def load_base_config() -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [
+        "config_manager"
+      ],
+      "used_by": [],
+      "migration_status": "needs_migration"
+    },
+    {
+      "name": "load_config",
+      "file": "scripts\\train_multihorizon_model.py",
+      "line": 71,
+      "type": "read",
+      "system": "MasterConfigManager",
+      "signature": "def load_config(config_path: str = None) -> dict:",
+      "return_type": "dict",
+      "dependencies": [
+        "config_manager",
+        "MasterConfigManager",
+        "ConfigManager",
+        "core.config_manager"
+      ],
+      "used_by": [
+        "config_manager.py",
+        "scripts\\rl\\rl_training_pipeline.py",
+        "scripts\\rl\\rl_training_pipeline_multi_strategy.py",
+        "scripts\\rl\\rl_training_pipeline_unified.py",
+        "ui\\ui_main_window.py",
+        "ui\\utils\\config_manager.py"
+      ],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "load_multiscale_config",
+      "file": "scripts\\train_multiscale_model.py",
+      "line": 59,
+      "type": "read",
+      "system": "MasterConfigManager",
+      "signature": "def load_multiscale_config(config_path: str = None) -> dict:",
+      "return_type": "dict",
+      "dependencies": [
+        "config_manager",
+        "MasterConfigManager",
+        "ConfigManager",
+        "core.config_manager"
+      ],
+      "used_by": [],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "load_custom_blocks_from_directory",
+      "file": "scripts\\features\\feature_builder.py",
+      "line": 859,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def load_custom_blocks_from_directory(directory: str = \"config/custom_feature_blocks\"):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "load_config",
+      "file": "scripts\\rl\\rl_training_pipeline.py",
+      "line": 43,
+      "type": "read",
+      "system": "MasterConfigManager",
+      "signature": "def load_config(config_path: str = \"config/rl_config.json\") -> Dict:",
+      "return_type": "Dict",
+      "dependencies": [
+        "config_manager",
+        "MasterConfigManager",
+        "ConfigManager",
+        "core.config_manager"
+      ],
+      "used_by": [
+        "config_manager.py",
+        "scripts\\train_multihorizon_model.py",
+        "scripts\\rl\\rl_training_pipeline_multi_strategy.py",
+        "scripts\\rl\\rl_training_pipeline_unified.py",
+        "ui\\ui_main_window.py",
+        "ui\\utils\\config_manager.py"
+      ],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "load_config",
+      "file": "ui\\utils\\config_manager.py",
+      "line": 43,
+      "type": "read",
+      "system": "UnifiedConfigManager",
+      "signature": "def load_config(self, app):",
+      "return_type": null,
+      "dependencies": [
+        "config_manager",
+        "UnifiedConfigManager",
+        "ConfigManager"
+      ],
+      "used_by": [
+        "config_manager.py",
+        "scripts\\train_multihorizon_model.py",
+        "scripts\\rl\\rl_training_pipeline.py",
+        "scripts\\rl\\rl_training_pipeline_multi_strategy.py",
+        "scripts\\rl\\rl_training_pipeline_unified.py",
+        "ui\\ui_main_window.py"
+      ],
+      "migration_status": "partial"
+    },
+    {
+      "name": "get_default_training_config",
+      "file": "config_manager.py",
+      "line": 555,
+      "type": "read",
+      "system": "direct_json",
+      "signature": "def get_default_training_config() -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [
+        "config_manager"
+      ],
+      "used_by": [
+        "training_utils.py"
+      ],
+      "migration_status": "needs_migration"
+    },
+    {
+      "name": "get_default_gui_config",
+      "file": "config_manager.py",
+      "line": 642,
+      "type": "read",
+      "system": "direct_json",
+      "signature": "def get_default_gui_config() -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [
+        "config_manager"
+      ],
+      "used_by": [],
+      "migration_status": "needs_migration"
+    },
+    {
+      "name": "get_sorted_configurations",
+      "file": "generate_training_presets.py",
+      "line": 134,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_sorted_configurations(self) -> List[Dict[str, Any]]:",
+      "return_type": "List[Dict[str, Any]]",
+      "dependencies": [],
+      "used_by": [],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_phase_config",
+      "file": "hyperparameter_strategy.py",
+      "line": 98,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_phase_config(self, phase: int) -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [],
+      "used_by": [
+        "tests\\test_hyperparameter_strategy.py",
+        "ui\\workers\\backtest_worker.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_best_config",
+      "file": "hyperparameter_strategy.py",
+      "line": 341,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_best_config(self, phase: int) -> Optional[Dict[str, Any]]:",
+      "return_type": "Optional[Dict[str, Any]]",
+      "dependencies": [],
+      "used_by": [
+        "tests\\test_hyperparameter_strategy.py",
+        "ui\\workers\\backtest_worker.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_default_config",
+      "file": "training_options_panel.py",
+      "line": 48,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_default_config():",
+      "return_type": null,
+      "dependencies": [
+        "training_utils"
+      ],
+      "used_by": [
+        "training_utils.py",
+        "tests\\unit\\test_training_config.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_default_config",
+      "file": "training_utils.py",
+      "line": 177,
+      "type": "read",
+      "system": "MasterConfigManager",
+      "signature": "def get_default_config() -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [
+        "config_manager",
+        "MasterConfigManager",
+        "ConfigManager",
+        "core.config_manager"
+      ],
+      "used_by": [
+        "training_options_panel.py",
+        "tests\\unit\\test_training_config.py"
+      ],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "get_loss_function",
+      "file": "training_utils.py",
+      "line": 348,
+      "type": "read",
+      "system": "MasterConfigManager",
+      "signature": "def get_loss_function(config: Dict[str, Any], device: Optional[torch.device] = None):",
+      "return_type": null,
+      "dependencies": [
+        "config_manager",
+        "MasterConfigManager",
+        "ConfigManager",
+        "core.config_manager"
+      ],
+      "used_by": [],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "get_optimizer",
+      "file": "training_utils.py",
+      "line": 452,
+      "type": "read",
+      "system": "MasterConfigManager",
+      "signature": "def get_optimizer(model, config: Dict[str, Any]):",
+      "return_type": null,
+      "dependencies": [
+        "config_manager",
+        "MasterConfigManager",
+        "ConfigManager",
+        "core.config_manager"
+      ],
+      "used_by": [
+        "fiboevo.py"
+      ],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "get_scheduler",
+      "file": "training_utils.py",
+      "line": 502,
+      "type": "read",
+      "system": "MasterConfigManager",
+      "signature": "def get_scheduler(optimizer, config: Dict[str, Any]):",
+      "return_type": null,
+      "dependencies": [
+        "config_manager",
+        "MasterConfigManager",
+        "ConfigManager",
+        "core.config_manager"
+      ],
+      "used_by": [
+        "fiboevo.py"
+      ],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "get_scaler",
+      "file": "training_utils.py",
+      "line": 548,
+      "type": "read",
+      "system": "MasterConfigManager",
+      "signature": "def get_scaler(config: Dict[str, Any]):",
+      "return_type": null,
+      "dependencies": [
+        "config_manager",
+        "MasterConfigManager",
+        "ConfigManager",
+        "core.config_manager"
+      ],
+      "used_by": [
+        "fiboevo.py",
+        "walk_forward_validation.py"
+      ],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "get_training_config",
+      "file": "core\\config_manager.py",
+      "line": 352,
+      "type": "read",
+      "system": "MasterConfigManager",
+      "signature": "def get_training_config(self) -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [
+        "config_manager",
+        "MasterConfigManager",
+        "ConfigManager"
+      ],
+      "used_by": [
+        "scripts\\training_config.py"
+      ],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "get_model_config",
+      "file": "core\\config_manager.py",
+      "line": 372,
+      "type": "read",
+      "system": "MasterConfigManager",
+      "signature": "def get_model_config(self) -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [
+        "config_manager",
+        "MasterConfigManager",
+        "ConfigManager"
+      ],
+      "used_by": [],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "get_data_config",
+      "file": "core\\config_manager.py",
+      "line": 381,
+      "type": "read",
+      "system": "MasterConfigManager",
+      "signature": "def get_data_config(self) -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [
+        "config_manager",
+        "MasterConfigManager",
+        "ConfigManager"
+      ],
+      "used_by": [],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "get_features_config",
+      "file": "core\\config_manager.py",
+      "line": 390,
+      "type": "read",
+      "system": "MasterConfigManager",
+      "signature": "def get_features_config(self) -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [
+        "config_manager",
+        "MasterConfigManager",
+        "ConfigManager"
+      ],
+      "used_by": [],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "get_global_config",
+      "file": "core\\config_manager.py",
+      "line": 512,
+      "type": "read",
+      "system": "MasterConfigManager",
+      "signature": "def get_global_config(key: str, default: Any = None) -> Any:",
+      "return_type": "Any",
+      "dependencies": [
+        "config_manager",
+        "MasterConfigManager",
+        "ConfigManager"
+      ],
+      "used_by": [],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "get_section_config",
+      "file": "core\\config_manager.py",
+      "line": 527,
+      "type": "read",
+      "system": "MasterConfigManager",
+      "signature": "def get_section_config(section: str, default: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [
+        "config_manager",
+        "MasterConfigManager",
+        "ConfigManager"
+      ],
+      "used_by": [],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "get_nested",
+      "file": "core\\utils.py",
+      "line": 175,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_nested(config: dict, *keys, default: Any = None) -> Any:",
+      "return_type": "Any",
+      "dependencies": [],
+      "used_by": [],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_strategy_config",
+      "file": "rl_agent\\strategy_types.py",
+      "line": 284,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_strategy_config(strategy_type: StrategyType) -> StrategyConfig:",
+      "return_type": "StrategyConfig",
+      "dependencies": [],
+      "used_by": [
+        "tests\\test_rl_integration.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config",
+      "file": "rl_agent\\strategies\\base_strategy.py",
+      "line": 100,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config(self) -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [],
+      "used_by": [
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_container_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_temp_config_path",
+      "file": "scripts\\artifact_paths.py",
+      "line": 114,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_temp_config_path(run_id: str) -> Path:",
+      "return_type": "Path",
+      "dependencies": [],
+      "used_by": [
+        "scripts\\validate_prerequisites.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config",
+      "file": "ui\\ui_tab_template.py",
+      "line": 319,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config(self) -> dict:",
+      "return_type": "dict",
+      "dependencies": [],
+      "used_by": [
+        "rl_agent\\strategies\\base_strategy.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_container_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config",
+      "file": "ui\\tabs\\audit_tab.py",
+      "line": 283,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config(self): return {}",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "rl_agent\\strategies\\base_strategy.py",
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_container_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config",
+      "file": "ui\\tabs\\backtest_tab.py",
+      "line": 716,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config(self):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "rl_agent\\strategies\\base_strategy.py",
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_container_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config",
+      "file": "ui\\tabs\\base_tab.py",
+      "line": 53,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config(self) -> dict:",
+      "return_type": "dict",
+      "dependencies": [],
+      "used_by": [
+        "rl_agent\\strategies\\base_strategy.py",
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_container_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config",
+      "file": "ui\\tabs\\base_tab.py",
+      "line": 197,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config(self) -> dict:",
+      "return_type": "dict",
+      "dependencies": [],
+      "used_by": [
+        "rl_agent\\strategies\\base_strategy.py",
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_container_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config",
+      "file": "ui\\tabs\\feature_composer_tab.py",
+      "line": 545,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config(self):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "rl_agent\\strategies\\base_strategy.py",
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_container_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config",
+      "file": "ui\\tabs\\feature_evolution_tab.py",
+      "line": 223,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config(self): return {}",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "rl_agent\\strategies\\base_strategy.py",
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_container_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config",
+      "file": "ui\\tabs\\preview_tab.py",
+      "line": 745,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config(self) -> dict:",
+      "return_type": "dict",
+      "dependencies": [],
+      "used_by": [
+        "rl_agent\\strategies\\base_strategy.py",
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_container_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config",
+      "file": "ui\\tabs\\rl_strategy_tab.py",
+      "line": 1672,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config(self) -> dict:",
+      "return_type": "dict",
+      "dependencies": [],
+      "used_by": [
+        "rl_agent\\strategies\\base_strategy.py",
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_container_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config",
+      "file": "ui\\tabs\\status_tab.py",
+      "line": 318,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config(self) -> dict:",
+      "return_type": "dict",
+      "dependencies": [],
+      "used_by": [
+        "rl_agent\\strategies\\base_strategy.py",
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\training_container_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config",
+      "file": "ui\\tabs\\training_container_tab.py",
+      "line": 148,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config(self) -> dict:",
+      "return_type": "dict",
+      "dependencies": [],
+      "used_by": [
+        "rl_agent\\strategies\\base_strategy.py",
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config",
+      "file": "ui\\tabs\\training_tab.py",
+      "line": 450,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config(self) -> dict:",
+      "return_type": "dict",
+      "dependencies": [],
+      "used_by": [
+        "rl_agent\\strategies\\base_strategy.py",
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config",
+      "file": "ui\\tabs\\walkforward_tab.py",
+      "line": 198,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config(self): return {}",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "rl_agent\\strategies\\base_strategy.py",
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config",
+      "file": "ui\\tabs\\wf_visualization_tab.py",
+      "line": 59,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config(self) -> dict:",
+      "return_type": "dict",
+      "dependencies": [],
+      "used_by": [
+        "rl_agent\\strategies\\base_strategy.py",
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_instance",
+      "file": "ui\\utils\\unified_config_manager.py",
+      "line": 137,
+      "type": "read",
+      "system": "MasterConfigManager",
+      "signature": "def get_instance(cls, config_dir: Path = None) -> 'UnifiedConfigManager':",
+      "return_type": "'UnifiedConfigManager'",
+      "dependencies": [
+        "config_manager",
+        "MasterConfigManager",
+        "UnifiedConfigManager",
+        "ConfigManager",
+        "core.config_manager"
+      ],
+      "used_by": [
+        "ui\\ui_main_window.py",
+        "ui\\utils\\background_manager.py"
+      ],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "get_unified_config_manager",
+      "file": "ui\\utils\\unified_config_manager.py",
+      "line": 431,
+      "type": "read",
+      "system": "MasterConfigManager",
+      "signature": "def get_unified_config_manager() -> UnifiedConfigManager:",
+      "return_type": "UnifiedConfigManager",
+      "dependencies": [
+        "config_manager",
+        "MasterConfigManager",
+        "UnifiedConfigManager",
+        "ConfigManager",
+        "core.config_manager"
+      ],
+      "used_by": [
+        "ui\\utils\\config_manager.py"
+      ],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "get_system_config",
+      "file": "venv\\Lib\\site-packages\\ccxt\\paradex.py",
+      "line": 1075,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_system_config(self):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\ccxt\\async_support\\paradex.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_system_config",
+      "file": "venv\\Lib\\site-packages\\ccxt\\async_support\\paradex.py",
+      "line": 1075,
+      "type": "read",
+      "system": "unknown",
+      "signature": "async def get_system_config(self):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\ccxt\\paradex.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "GetConfig",
+      "file": "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\bip\\conf\\bip44\\bip44_conf_getter.py",
+      "line": 138,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def GetConfig(coin_type: BipCoins) -> BipCoinConf:",
+      "return_type": "BipCoinConf",
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\bip\\bip44\\bip44.py",
+        "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\bip\\conf\\bip49\\bip49_conf_getter.py",
+        "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\bip\\conf\\bip84\\bip84_conf_getter.py",
+        "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\bip\\conf\\bip86\\bip86_conf_getter.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "GetConfig",
+      "file": "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\bip\\conf\\bip49\\bip49_conf_getter.py",
+      "line": 65,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def GetConfig(coin_type: BipCoins) -> BipCoinConf:",
+      "return_type": "BipCoinConf",
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\bip\\bip44\\bip44.py",
+        "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\bip\\conf\\bip44\\bip44_conf_getter.py",
+        "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\bip\\conf\\bip84\\bip84_conf_getter.py",
+        "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\bip\\conf\\bip86\\bip86_conf_getter.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "GetConfig",
+      "file": "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\bip\\conf\\bip84\\bip84_conf_getter.py",
+      "line": 51,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def GetConfig(coin_type: BipCoins) -> BipCoinConf:",
+      "return_type": "BipCoinConf",
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\bip\\bip44\\bip44.py",
+        "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\bip\\conf\\bip44\\bip44_conf_getter.py",
+        "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\bip\\conf\\bip49\\bip49_conf_getter.py",
+        "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\bip\\conf\\bip86\\bip86_conf_getter.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "GetConfig",
+      "file": "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\bip\\conf\\bip86\\bip86_conf_getter.py",
+      "line": 49,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def GetConfig(coin_type: BipCoins) -> BipCoinConf:",
+      "return_type": "BipCoinConf",
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\bip\\bip44\\bip44.py",
+        "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\bip\\conf\\bip44\\bip44_conf_getter.py",
+        "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\bip\\conf\\bip49\\bip49_conf_getter.py",
+        "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\bip\\conf\\bip84\\bip84_conf_getter.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config",
+      "file": "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\ecdsa\\_version.py",
+      "line": 37,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config():",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "rl_agent\\strategies\\base_strategy.py",
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config",
+      "file": "venv\\Lib\\site-packages\\ccxt\\static_dependencies\\toolz\\_version.py",
+      "line": 37,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config():",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "rl_agent\\strategies\\base_strategy.py",
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config",
+      "file": "venv\\Lib\\site-packages\\influxdb_client\\service\\config_service.py",
+      "line": 32,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config(self, **kwargs):  # noqa: E501,D401,D403",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "rl_agent\\strategies\\base_strategy.py",
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config_with_http_info",
+      "file": "venv\\Lib\\site-packages\\influxdb_client\\service\\config_service.py",
+      "line": 54,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config_with_http_info(self, **kwargs):  # noqa: E501,D401,D403",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config_async",
+      "file": "venv\\Lib\\site-packages\\influxdb_client\\service\\config_service.py",
+      "line": 89,
+      "type": "read",
+      "system": "unknown",
+      "signature": "async def get_config_async(self, **kwargs):  # noqa: E501,D401,D403",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_weight",
+      "file": "venv\\Lib\\site-packages\\matplotlib\\font_manager.py",
+      "line": 410,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_weight():  # From fontconfig's FcFreeTypeQueryFaceInternal.",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\matplotlib\\text.py",
+        "venv\\Lib\\site-packages\\matplotlib\\_afm.py",
+        "venv\\Lib\\site-packages\\matplotlib\\backends\\backend_pgf.py",
+        "venv\\Lib\\site-packages\\matplotlib\\backends\\backend_svg.py",
+        "venv\\Lib\\site-packages\\matplotlib\\backends\\backend_wx.py",
+        "venv\\Lib\\site-packages\\matplotlib\\tests\\test_figure.py",
+        "venv\\Lib\\site-packages\\matplotlib\\tests\\test_text.py",
+        "venv\\Lib\\site-packages\\sklearn\\pipeline.py",
+        "venv\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_fontconfig_pattern",
+      "file": "venv\\Lib\\site-packages\\matplotlib\\font_manager.py",
+      "line": 774,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_fontconfig_pattern(self):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_configdir",
+      "file": "venv\\Lib\\site-packages\\matplotlib\\__init__.py",
+      "line": 564,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_configdir():",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\matplotlib\\style\\core.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_plot_formats",
+      "file": "venv\\Lib\\site-packages\\matplotlib\\sphinxext\\plot_directive.py",
+      "line": 570,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_plot_formats(config):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config_cmd",
+      "file": "venv\\Lib\\site-packages\\numpy\\distutils\\misc_util.py",
+      "line": 1809,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config_cmd(self):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\numpy\\f2py\\tests\\util.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_atlas_version",
+      "file": "venv\\Lib\\site-packages\\numpy\\distutils\\system_info.py",
+      "line": 1778,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_atlas_version(**config):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config_exe",
+      "file": "venv\\Lib\\site-packages\\numpy\\distutils\\system_info.py",
+      "line": 2966,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config_exe(self):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config_output",
+      "file": "venv\\Lib\\site-packages\\numpy\\distutils\\system_info.py",
+      "line": 2971,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config_output(self, config_exe, option):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config",
+      "file": "venv\\Lib\\site-packages\\pandas\\_version.py",
+      "line": 39,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config():",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "rl_agent\\strategies\\base_strategy.py",
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_configuration_files",
+      "file": "venv\\Lib\\site-packages\\pip\\_internal\\configuration.py",
+      "line": 68,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_configuration_files() -> Dict[Kind, List[str]]:",
+      "return_type": "Dict[Kind, List[str]]",
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\pip\\_internal\\commands\\configuration.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_values_in_config",
+      "file": "venv\\Lib\\site-packages\\pip\\_internal\\configuration.py",
+      "line": 350,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_values_in_config(self, variant: Kind) -> Dict[str, Any]:",
+      "return_type": "Dict[str, Any]",
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\pip\\_internal\\commands\\configuration.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_requires_for_build_wheel",
+      "file": "venv\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_impl.py",
+      "line": 155,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_requires_for_build_wheel(self, config_settings=None):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\pip\\_internal\\distributions\\sdist.py",
+        "venv\\Lib\\site-packages\\pip\\_internal\\utils\\misc.py",
+        "venv\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_in_process\\_in_process.py",
+        "venv\\Lib\\site-packages\\setuptools\\build_meta.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_requires_for_build_editable",
+      "file": "venv\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_impl.py",
+      "line": 215,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_requires_for_build_editable(self, config_settings=None):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\pip\\_internal\\distributions\\sdist.py",
+        "venv\\Lib\\site-packages\\pip\\_internal\\utils\\misc.py",
+        "venv\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_in_process\\_in_process.py",
+        "venv\\Lib\\site-packages\\setuptools\\build_meta.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_requires_for_build_sdist",
+      "file": "venv\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_impl.py",
+      "line": 276,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_requires_for_build_sdist(self, config_settings=None):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\pip\\_internal\\utils\\misc.py",
+        "venv\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_in_process\\_in_process.py",
+        "venv\\Lib\\site-packages\\setuptools\\build_meta.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_requires_for_build_wheel",
+      "file": "venv\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_in_process\\_in_process.py",
+      "line": 107,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_requires_for_build_wheel(config_settings):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\pip\\_internal\\distributions\\sdist.py",
+        "venv\\Lib\\site-packages\\pip\\_internal\\utils\\misc.py",
+        "venv\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_impl.py",
+        "venv\\Lib\\site-packages\\setuptools\\build_meta.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_requires_for_build_editable",
+      "file": "venv\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_in_process\\_in_process.py",
+      "line": 121,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_requires_for_build_editable(config_settings):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\pip\\_internal\\distributions\\sdist.py",
+        "venv\\Lib\\site-packages\\pip\\_internal\\utils\\misc.py",
+        "venv\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_impl.py",
+        "venv\\Lib\\site-packages\\setuptools\\build_meta.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_requires_for_build_sdist",
+      "file": "venv\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_in_process\\_in_process.py",
+      "line": 276,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_requires_for_build_sdist(config_settings):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\pip\\_internal\\utils\\misc.py",
+        "venv\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_impl.py",
+        "venv\\Lib\\site-packages\\setuptools\\build_meta.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_requires_for_build_wheel",
+      "file": "venv\\Lib\\site-packages\\setuptools\\build_meta.py",
+      "line": 337,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_requires_for_build_wheel(self, config_settings=None):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\pip\\_internal\\distributions\\sdist.py",
+        "venv\\Lib\\site-packages\\pip\\_internal\\utils\\misc.py",
+        "venv\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_impl.py",
+        "venv\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_in_process\\_in_process.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_requires_for_build_sdist",
+      "file": "venv\\Lib\\site-packages\\setuptools\\build_meta.py",
+      "line": 340,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_requires_for_build_sdist(self, config_settings=None):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\pip\\_internal\\utils\\misc.py",
+        "venv\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_impl.py",
+        "venv\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_in_process\\_in_process.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_requires_for_build_editable",
+      "file": "venv\\Lib\\site-packages\\setuptools\\build_meta.py",
+      "line": 445,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_requires_for_build_editable(self, config_settings=None):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\pip\\_internal\\distributions\\sdist.py",
+        "venv\\Lib\\site-packages\\pip\\_internal\\utils\\misc.py",
+        "venv\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_impl.py",
+        "venv\\Lib\\site-packages\\pip\\_vendor\\pyproject_hooks\\_in_process\\_in_process.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config_h_filename",
+      "file": "venv\\Lib\\site-packages\\setuptools\\_distutils\\sysconfig.py",
+      "line": 354,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config_h_filename():",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\setuptools\\_distutils\\cygwinccompiler.py",
+        "venv\\Lib\\site-packages\\setuptools\\_distutils\\command\\build_ext.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config_vars",
+      "file": "venv\\Lib\\site-packages\\setuptools\\_distutils\\sysconfig.py",
+      "line": 525,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config_vars(*args):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\numpy\\distutils\\ccompiler.py",
+        "venv\\Lib\\site-packages\\numpy\\distutils\\misc_util.py",
+        "venv\\Lib\\site-packages\\numpy\\distutils\\unixccompiler.py",
+        "venv\\Lib\\site-packages\\numpy\\distutils\\fcompiler\\gnu.py",
+        "venv\\Lib\\site-packages\\pip\\_internal\\utils\\compat.py",
+        "venv\\Lib\\site-packages\\pip\\_vendor\\distlib\\util.py",
+        "venv\\Lib\\site-packages\\setuptools\\command\\easy_install.py",
+        "venv\\Lib\\site-packages\\setuptools\\_distutils\\command\\install.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config_var",
+      "file": "venv\\Lib\\site-packages\\setuptools\\_distutils\\sysconfig.py",
+      "line": 549,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config_var(name):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\cffi\\api.py",
+        "venv\\Lib\\site-packages\\cffi\\recompiler.py",
+        "venv\\Lib\\site-packages\\cffi\\setuptools_ext.py",
+        "venv\\Lib\\site-packages\\joblib\\test\\common.py",
+        "venv\\Lib\\site-packages\\numpy\\ctypeslib.py",
+        "venv\\Lib\\site-packages\\numpy\\core\\tests\\test_errstate.py",
+        "venv\\Lib\\site-packages\\numpy\\core\\tests\\test_limited_api.py",
+        "venv\\Lib\\site-packages\\numpy\\distutils\\system_info.py",
+        "venv\\Lib\\site-packages\\numpy\\distutils\\fcompiler\\gnu.py",
+        "venv\\Lib\\site-packages\\numpy\\distutils\\fcompiler\\__init__.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "get_config",
+      "file": "venv\\Lib\\site-packages\\sklearn\\_config.py",
+      "line": 35,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def get_config():",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "rl_agent\\strategies\\base_strategy.py",
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "read_config",
+      "file": "venv\\Lib\\site-packages\\numpy\\distutils\\npy_pkg_config.py",
+      "line": 326,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def read_config(pkgname, dirs=None):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\numpy\\distutils\\misc_util.py",
+        "venv\\Lib\\site-packages\\numpy\\distutils\\tests\\test_npy_pkg_config.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "read_configuration",
+      "file": "venv\\Lib\\site-packages\\pip\\_vendor\\distlib\\index.py",
+      "line": 73,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def read_configuration(self):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\setuptools\\config\\pyprojecttoml.py",
+        "venv\\Lib\\site-packages\\setuptools\\config\\setupcfg.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "fetch2",
+      "file": "venv\\Lib\\site-packages\\ccxt\\async_support\\base\\exchange.py",
+      "line": 963,
+      "type": "read",
+      "system": "unknown",
+      "signature": "async def fetch2(self, path, api: Any = 'public', method='GET', params={}, headers: Any = None, body: Any = None, config={}):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\ccxt\\binance.py",
+        "venv\\Lib\\site-packages\\ccxt\\btcbox.py",
+        "venv\\Lib\\site-packages\\ccxt\\coinbaseexchange.py",
+        "venv\\Lib\\site-packages\\ccxt\\async_support\\binance.py",
+        "venv\\Lib\\site-packages\\ccxt\\async_support\\btcbox.py",
+        "venv\\Lib\\site-packages\\ccxt\\async_support\\coinbaseexchange.py",
+        "venv\\Lib\\site-packages\\ccxt\\base\\exchange.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "fetch2",
+      "file": "venv\\Lib\\site-packages\\ccxt\\base\\exchange.py",
+      "line": 4960,
+      "type": "read",
+      "system": "unknown",
+      "signature": "def fetch2(self, path, api: Any = 'public', method='GET', params={}, headers: Any = None, body: Any = None, config={}):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\ccxt\\binance.py",
+        "venv\\Lib\\site-packages\\ccxt\\btcbox.py",
+        "venv\\Lib\\site-packages\\ccxt\\coinbaseexchange.py",
+        "venv\\Lib\\site-packages\\ccxt\\async_support\\binance.py",
+        "venv\\Lib\\site-packages\\ccxt\\async_support\\btcbox.py",
+        "venv\\Lib\\site-packages\\ccxt\\async_support\\coinbaseexchange.py",
+        "venv\\Lib\\site-packages\\ccxt\\async_support\\base\\exchange.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "save_config",
+      "file": "config_manager.py",
+      "line": 121,
+      "type": "write",
+      "system": "direct_json",
+      "signature": "def save_config(cfg: Dict[str, Any], path: str | Path = \"config.json\", *, backup: bool = True) -> None:",
+      "return_type": "None",
+      "dependencies": [
+        "config_manager"
+      ],
+      "used_by": [
+        "trading_daemon.py",
+        "ui\\ui_main_window.py",
+        "ui\\ui_tab_template.py",
+        "ui\\utils\\config_manager.py"
+      ],
+      "migration_status": "needs_migration"
+    },
+    {
+      "name": "save_training_config",
+      "file": "config_manager.py",
+      "line": 293,
+      "type": "write",
+      "system": "direct_json",
+      "signature": "def save_training_config(cfg: Dict[str, Any], path: Optional[str | Path] = None) -> None:",
+      "return_type": "None",
+      "dependencies": [
+        "config_manager"
+      ],
+      "used_by": [
+        "training_options_panel.py",
+        "training_utils.py",
+        "tests\\unit\\test_training_config.py"
+      ],
+      "migration_status": "needs_migration"
+    },
+    {
+      "name": "save_gui_config",
+      "file": "config_manager.py",
+      "line": 326,
+      "type": "write",
+      "system": "direct_json",
+      "signature": "def save_gui_config(cfg: Dict[str, Any], path: Optional[str | Path] = None) -> None:",
+      "return_type": "None",
+      "dependencies": [
+        "config_manager"
+      ],
+      "used_by": [],
+      "migration_status": "needs_migration"
+    },
+    {
+      "name": "save_rl_config",
+      "file": "config_manager.py",
+      "line": 362,
+      "type": "write",
+      "system": "direct_json",
+      "signature": "def save_rl_config(cfg: Dict[str, Any], path: Optional[str | Path] = None) -> None:",
+      "return_type": "None",
+      "dependencies": [
+        "config_manager"
+      ],
+      "used_by": [],
+      "migration_status": "needs_migration"
+    },
+    {
+      "name": "save_dashboard_config",
+      "file": "config_manager.py",
+      "line": 397,
+      "type": "write",
+      "system": "direct_json",
+      "signature": "def save_dashboard_config(cfg: Dict[str, Any], path: Optional[str | Path] = None) -> None:",
+      "return_type": "None",
+      "dependencies": [
+        "config_manager"
+      ],
+      "used_by": [
+        "prediction_dashboard_tab.py"
+      ],
+      "migration_status": "needs_migration"
+    },
+    {
+      "name": "save_config",
+      "file": "trading_daemon.py",
+      "line": 529,
+      "type": "write",
+      "system": "config_manager_legacy",
+      "signature": "def save_config(self, path: Optional[str] = None):",
+      "return_type": null,
+      "dependencies": [
+        "config_manager"
+      ],
+      "used_by": [
+        "config_manager.py",
+        "ui\\ui_main_window.py",
+        "ui\\ui_tab_template.py",
+        "ui\\utils\\config_manager.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "save_training_config",
+      "file": "training_options_panel.py",
+      "line": 45,
+      "type": "write",
+      "system": "unknown",
+      "signature": "def save_training_config(config, path=None):",
+      "return_type": null,
+      "dependencies": [
+        "training_utils"
+      ],
+      "used_by": [
+        "config_manager.py",
+        "training_utils.py",
+        "tests\\unit\\test_training_config.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "save_training_config",
+      "file": "training_utils.py",
+      "line": 142,
+      "type": "write",
+      "system": "MasterConfigManager",
+      "signature": "def save_training_config(config: Dict[str, Any], config_path: Optional[Union[str, Path]] = None) -> None:",
+      "return_type": "None",
+      "dependencies": [
+        "config_manager",
+        "MasterConfigManager",
+        "ConfigManager",
+        "core.config_manager"
+      ],
+      "used_by": [
+        "config_manager.py",
+        "training_options_panel.py",
+        "tests\\unit\\test_training_config.py"
+      ],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "save",
+      "file": "core\\config_manager.py",
+      "line": 417,
+      "type": "write",
+      "system": "MasterConfigManager",
+      "signature": "def save(self, config: Optional[Dict[str, Any]] = None, backup: bool = True) -> None:",
+      "return_type": "None",
+      "dependencies": [
+        "config_manager",
+        "MasterConfigManager",
+        "ConfigManager"
+      ],
+      "used_by": [
+        "config_manager.py",
+        "create_all_icons.py",
+        "create_icons_simple.py",
+        "create_missing_icons.py",
+        "fiboevo.py",
+        "fp_utils.py",
+        "test_large_images.py",
+        "tradeapp_legacy.py",
+        "walk_forward_validation.py",
+        "archive\\TradeApp_legacy.py"
+      ],
+      "migration_status": "migrated"
+    },
+    {
+      "name": "save_config",
+      "file": "ui\\ui_main_window.py",
+      "line": 1732,
+      "type": "write",
+      "system": "ConfigManager_UI",
+      "signature": "def save_config(self):",
+      "return_type": null,
+      "dependencies": [
+        "config_manager",
+        "ConfigManager"
+      ],
+      "used_by": [
+        "config_manager.py",
+        "trading_daemon.py",
+        "ui\\ui_tab_template.py",
+        "ui\\utils\\config_manager.py"
+      ],
+      "migration_status": "partial"
+    },
+    {
+      "name": "save_config",
+      "file": "ui\\ui_tab_template.py",
+      "line": 376,
+      "type": "write",
+      "system": "unknown",
+      "signature": "def save_config(self):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "config_manager.py",
+        "trading_daemon.py",
+        "ui\\ui_main_window.py",
+        "ui\\utils\\config_manager.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "save_config",
+      "file": "ui\\utils\\config_manager.py",
+      "line": 124,
+      "type": "write",
+      "system": "UnifiedConfigManager",
+      "signature": "def save_config(self, app):",
+      "return_type": null,
+      "dependencies": [
+        "config_manager",
+        "UnifiedConfigManager",
+        "ConfigManager"
+      ],
+      "used_by": [
+        "config_manager.py",
+        "trading_daemon.py",
+        "ui\\ui_main_window.py",
+        "ui\\ui_tab_template.py"
+      ],
+      "migration_status": "partial"
+    },
+    {
+      "name": "save_configuration",
+      "file": "venv\\Lib\\site-packages\\pip\\_vendor\\distlib\\index.py",
+      "line": 86,
+      "type": "write",
+      "system": "unknown",
+      "signature": "def save_configuration(self):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "set_config",
+      "file": "ui\\ui_tab_template.py",
+      "line": 332,
+      "type": "write",
+      "system": "unknown",
+      "signature": "def set_config(self, config: dict):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_container_tab.py",
+        "ui\\tabs\\training_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "set_config",
+      "file": "ui\\tabs\\audit_tab.py",
+      "line": 284,
+      "type": "write",
+      "system": "unknown",
+      "signature": "def set_config(self, config): pass",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_container_tab.py",
+        "ui\\tabs\\training_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "set_config",
+      "file": "ui\\tabs\\backtest_tab.py",
+      "line": 719,
+      "type": "write",
+      "system": "unknown",
+      "signature": "def set_config(self, config):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_container_tab.py",
+        "ui\\tabs\\training_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "set_config",
+      "file": "ui\\tabs\\base_tab.py",
+      "line": 63,
+      "type": "write",
+      "system": "unknown",
+      "signature": "def set_config(self, config: dict):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_container_tab.py",
+        "ui\\tabs\\training_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "set_config",
+      "file": "ui\\tabs\\feature_composer_tab.py",
+      "line": 554,
+      "type": "write",
+      "system": "unknown",
+      "signature": "def set_config(self, config):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_container_tab.py",
+        "ui\\tabs\\training_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "set_config",
+      "file": "ui\\tabs\\feature_evolution_tab.py",
+      "line": 224,
+      "type": "write",
+      "system": "unknown",
+      "signature": "def set_config(self, config): pass",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_container_tab.py",
+        "ui\\tabs\\training_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "set_config",
+      "file": "ui\\tabs\\preview_tab.py",
+      "line": 762,
+      "type": "write",
+      "system": "unknown",
+      "signature": "def set_config(self, config: dict):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_container_tab.py",
+        "ui\\tabs\\training_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "set_config",
+      "file": "ui\\tabs\\rl_strategy_tab.py",
+      "line": 1687,
+      "type": "write",
+      "system": "unknown",
+      "signature": "def set_config(self, config: dict):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_container_tab.py",
+        "ui\\tabs\\training_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "set_config",
+      "file": "ui\\tabs\\status_tab.py",
+      "line": 321,
+      "type": "write",
+      "system": "unknown",
+      "signature": "def set_config(self, config: dict):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\training_container_tab.py",
+        "ui\\tabs\\training_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "set_config",
+      "file": "ui\\tabs\\training_container_tab.py",
+      "line": 157,
+      "type": "write",
+      "system": "unknown",
+      "signature": "def set_config(self, config: dict):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "set_config",
+      "file": "ui\\tabs\\training_tab.py",
+      "line": 453,
+      "type": "write",
+      "system": "unknown",
+      "signature": "def set_config(self, config: dict):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_container_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "set_config",
+      "file": "ui\\tabs\\walkforward_tab.py",
+      "line": 199,
+      "type": "write",
+      "system": "unknown",
+      "signature": "def set_config(self, config): pass",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_container_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "set_config",
+      "file": "ui\\tabs\\wf_visualization_tab.py",
+      "line": 65,
+      "type": "write",
+      "system": "unknown",
+      "signature": "def set_config(self, config: dict):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [
+        "ui\\ui_tab_template.py",
+        "ui\\tabs\\audit_tab.py",
+        "ui\\tabs\\backtest_tab.py",
+        "ui\\tabs\\base_tab.py",
+        "ui\\tabs\\feature_composer_tab.py",
+        "ui\\tabs\\feature_evolution_tab.py",
+        "ui\\tabs\\preview_tab.py",
+        "ui\\tabs\\rl_strategy_tab.py",
+        "ui\\tabs\\status_tab.py",
+        "ui\\tabs\\training_container_tab.py"
+      ],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "set_fontconfig_pattern",
+      "file": "venv\\Lib\\site-packages\\matplotlib\\font_manager.py",
+      "line": 913,
+      "type": "write",
+      "system": "unknown",
+      "signature": "def set_fontconfig_pattern(self, pattern):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "update_config",
+      "file": "rl_agent\\strategies\\base_strategy.py",
+      "line": 104,
+      "type": "write",
+      "system": "unknown",
+      "signature": "def update_config(self, config: Dict[str, Any]):",
+      "return_type": null,
+      "dependencies": [],
+      "used_by": [],
+      "migration_status": "legacy"
+    },
+    {
+      "name": "train_model_worker",
+      "file": "ui\\workers\\training_worker.py",
+      "line": 483,
+      "type": "read",
+      "system": "direct_json",
+      "signature": "training_config = json.loads(training_config_path.read_text(encoding=\"utf-8\"))",
+      "has_direct_json_access": true,
+      "dependencies": [],
+      "used_by": [
+        "ui\\workers\\retraining_worker.py"
+      ],
+      "migration_status": "needs_migration"
+    },
+    {
+      "name": "create_phase4_validation_config",
+      "file": "hyperparameter_phases.py",
+      "line": 1247,
+      "type": "write",
+      "system": "direct_json",
+      "signature": "json.dump(best_configs, f, indent=2)",
+      "has_direct_json_access": true,
+      "dependencies": [],
+      "used_by": [
+        "generate_training_presets.py",
+        "scripts\\validate_gui_integration.py",
+        "tests\\integration\\test_gui_hyperparameter_optimization.py",
+        "tests\\integration\\test_nested_cv_integration.py"
+      ],
+      "migration_status": "needs_migration"
+    },
+    {
+      "name": "show",
+      "file": "venv\\Lib\\site-packages\\numpy\\__config__.py",
+      "line": 156,
+      "type": "write",
+      "system": "direct_json",
+      "signature": "print(json.dumps(CONFIG, indent=2))",
+      "has_direct_json_access": true,
+      "dependencies": [],
+      "used_by": [
+        "dashboard_visualizations.py",
+        "fiboevo.py",
+        "examples\\example_future_predictions.py",
+        "examples\\example_multi_horizon.py",
+        "examples\\example_prediction_fan.py",
+        "scripts\\inference\\future_forecast_fan.py",
+        "scripts\\inference\\multi_horizon_inference.py",
+        "scripts\\inference\\oracle_visualization.py",
+        "scripts\\inference\\simple_future_forecast.py",
+        "tests\\verify_inference_logic.py"
+      ],
+      "migration_status": "needs_migration"
+    },
+    {
+      "name": "show",
+      "file": "venv\\Lib\\site-packages\\scipy\\__config__.py",
+      "line": 155,
+      "type": "write",
+      "system": "direct_json",
+      "signature": "print(json.dumps(CONFIG, indent=2))",
+      "has_direct_json_access": true,
+      "dependencies": [],
+      "used_by": [
+        "dashboard_visualizations.py",
+        "fiboevo.py",
+        "examples\\example_future_predictions.py",
+        "examples\\example_multi_horizon.py",
+        "examples\\example_prediction_fan.py",
+        "scripts\\inference\\future_forecast_fan.py",
+        "scripts\\inference\\multi_horizon_inference.py",
+        "scripts\\inference\\oracle_visualization.py",
+        "scripts\\inference\\simple_future_forecast.py",
+        "tests\\verify_inference_logic.py"
+      ],
+      "migration_status": "needs_migration"
+    },
+    {
+      "name": "test_config",
+      "file": "tests\\test_rl_integration.py",
+      "line": 149,
+      "type": "read",
+      "system": "direct_json",
+      "signature": "with open('config/rl_config.json', 'r') as f:",
+      "has_direct_json_access": true,
+      "dependencies": [],
+      "used_by": [
+        "venv\\Lib\\site-packages\\pandas\\tests\\arrays\\string_\\test_string_arrow.py"
+      ],
+      "migration_status": "needs_migration"
+    }
+  ]
+}
